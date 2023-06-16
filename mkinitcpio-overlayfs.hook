@@ -12,7 +12,7 @@ run_latehook() {
 	mount --move ${ROOT_MNT} ${OFS_LOWER}
 
 	mkdir -p ${OFS_COWSPACE}
-	mount -t tmpfs cowspace ${OFS_COWSPACE}
+	mount $OVERLAY_DISK ${OFS_COWSPACE}
 
 	[ -d ${OFS_UPPER} ] || mkdir -p ${OFS_UPPER}
 	[ -d ${OFS_WORK} ] || mkdir -p ${OFS_WORK}
